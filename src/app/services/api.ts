@@ -1,5 +1,7 @@
 // API Configuration
-const API_BASE_URL = "/api";
+// In production (Vercel), use full URL from env variable
+// In development, use relative /api path (proxied to localhost:5000)
+const API_BASE_URL = import.meta.env.VITE_API_URL || "/api";
 
 // Get token from localStorage
 const getToken = (): string | null => {
