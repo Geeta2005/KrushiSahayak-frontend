@@ -80,7 +80,7 @@ cp .env.example .env
 ```
 PORT=5000
 NODE_ENV=development
-MONGODB_URI=mongodb://localhost:27017/farmrent
+MONGODB_URI=mongodb://localhost:27017/krushisahayak
 JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
 JWT_EXPIRE=30d
 FRONTEND_URL=http://localhost:5173
@@ -118,7 +118,7 @@ The server will run on `http://localhost:5000`
 4. Update `MONGODB_URI` in your `.env` file:
 
 ```
-MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/farmrent
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/krushisahayak
 ```
 
 ## Testing the API
@@ -247,7 +247,7 @@ const loadEquipment = async () => {
 
 ```bash
 npm install -g pm2
-pm2 start server.js --name farmrent-backend
+pm2 start server.js --name krushisahayak-backend
 pm2 save
 pm2 startup
 ```
