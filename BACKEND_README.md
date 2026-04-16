@@ -80,7 +80,7 @@ cp .env.example .env
 ```
 PORT=5000
 NODE_ENV=development
-MONGODB_URI=mongodb://localhost:27017/krushisahayak
+MONGODB_URI=mongodb+srv://geetapachore1602_db_user:SaWwuy87u3hxIgYe@cluster0.00lsjyf.mongodb.net/KrushiSahayak?appName=Cluster0
 JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
 JWT_EXPIRE=30d
 FRONTEND_URL=http://localhost:5173
