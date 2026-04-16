@@ -58,7 +58,7 @@ export function AdminLayout() {
             <Tractor className="size-8 text-green-600" />
             <div>
               <span className="text-lg md:text-xl font-bold text-gray-900">
-                FarmRent
+                KrushiSahayak
               </span>
               <p className="text-xs text-gray-500">Admin Panel</p>
             </div>

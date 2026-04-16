@@ -1,7 +1,8 @@
 import { Link, Outlet, useLocation, useNavigate } from "react-router";
-import { Tractor, Menu, X, User, LogOut, ChevronDown } from "lucide-react";
+import { Menu, X, User, LogOut, ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
+import { KrushiSahayakLogo } from "./KrushiSahayakLogo";
 import { useState, useEffect } from "react";
 import { isAuthenticated, authAPI, getCurrentUserData } from "../services/api";
 
@@ -49,11 +50,8 @@ export function Layout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-14 md:h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2">
-              <Tractor className="size-6 md:size-8 text-green-600" />
-              <span className="text-lg md:text-xl font-semibold text-gray-900">
-                FarmRent
-              </span>
+            <Link to="/" className="flex items-center">
+              <KrushiSahayakLogo size="sm" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -258,11 +256,8 @@ export function Layout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
             <div>
-              <div className="flex items-center gap-2 mb-3 md:mb-4">
-                <Tractor className="size-5 md:size-6 text-green-500" />
-                <span className="text-sm md:text-base font-semibold">
-                  FarmRent
-                </span>
+              <div className="flex items-center mb-3 md:mb-4">
+                <KrushiSahayakLogo size="sm" variant="light" />
               </div>
               <p className="text-gray-400 text-xs md:text-sm">
                 Connecting farmers with quality equipment rentals nationwide.
@@ -337,7 +332,7 @@ export function Layout() {
           </div>
 
           <div className="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-xs md:text-sm text-gray-400">
-            <p>&copy; 2026 FarmRent. All rights reserved.</p>
+            <p>&copy; 2026 KrushiSahayak. All rights reserved.</p>
           </div>
         </div>
       </footer>

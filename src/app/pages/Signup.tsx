@@ -74,7 +74,7 @@ export function Signup() {
 
       if (response.success) {
         toast.success("Account created successfully!", {
-          description: "Welcome to FarmRent. Please sign in to continue.",
+          description: "Welcome to KrushiSahayak. Please sign in to continue.",
         });
         navigate("/login");
       }
@@ -99,14 +99,14 @@ export function Signup() {
           <Link to="/" className="inline-flex items-center gap-2 mb-4">
             <Tractor className="size-10 md:size-12 text-green-600" />
             <span className="text-2xl md:text-3xl font-bold text-gray-900">
-              FarmRent
+              KrushiSahayak
             </span>
           </Link>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             Create Account
           </h1>
           <p className="text-sm md:text-base text-gray-600">
-            Join FarmRent to rent and list farming equipment
+            Join KrushiSahayak to rent and list farming equipment
           </p>
         </div>
 

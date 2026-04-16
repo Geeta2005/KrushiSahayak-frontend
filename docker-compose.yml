@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   frontend:
@@ -12,7 +12,7 @@ services:
     environment:
       - VITE_API_URL=http://backend:5000/api
     networks:
-      - farmrent-network
+      - krushisahayak-network
 
   backend:
     build:
@@ -23,14 +23,14 @@ services:
     environment:
       - PORT=5000
       - NODE_ENV=production
-      - MONGODB_URI=mongodb://mongodb:27017/farmrent
+      - MONGODB_URI=mongodb://mongodb:27017/krushisahayak
       - JWT_SECRET=your-secret-key-here
       - JWT_EXPIRE=7d
       - FRONTEND_URL=http://localhost:3000
     depends_on:
       - mongodb
     networks:
-      - farmrent-network
+      - krushisahayak-network
 
   mongodb:
     image: mongo:latest
@@ -39,11 +39,11 @@ services:
     volumes:
       - mongodb-data:/data/db
     networks:
-      - farmrent-network
+      - krushisahayak-network
 
 volumes:
   mongodb-data:
 
 networks:
-  farmrent-network:
+  krushisahayak-network:
     driver: bridge

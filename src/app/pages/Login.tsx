@@ -68,7 +68,7 @@ export function Login() {
           <Link to="/" className="inline-flex items-center gap-2 mb-4">
             <Tractor className="size-10 md:size-12 text-green-600" />
             <span className="text-2xl md:text-3xl font-bold text-gray-900">
-              FarmRent
+              KrushiSahayak
             </span>
           </Link>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">

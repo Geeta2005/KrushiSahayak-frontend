@@ -32,10 +32,8 @@ dist-ssr
 *.sw?
 
 # Backend specific
-backend/node_modules
-backend/.env
-backend/uploads
-backend/tmp
+backend/
+
 
 # Database
 *.db

@@ -69,7 +69,7 @@ export function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 md:mb-6">
-              FarmRent
+              KrushiSahayak
             </h1>
             <p className="text-xl md:text-2xl lg:text-3xl text-gray-800 mb-3 md:mb-4">
               Quality farming equipment when you need it

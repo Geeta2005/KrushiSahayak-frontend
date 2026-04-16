@@ -31,8 +31,8 @@ import { toast } from "sonner";
 export function AdminSettings() {
   const [isLoading, setIsLoading] = useState(false);
   const [settings, setSettings] = useState({
-    platformName: "FarmRent",
-    supportEmail: "support@farmrent.com",
+    platformName: "KrushiSahayak",
+    supportEmail: "support@krushisahayak.com",
     contactPhone: "+1 (555) 123-4567",
     commissionRate: 15,
     notifications: {

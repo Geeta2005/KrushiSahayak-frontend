@@ -1,6 +1,6 @@
-# FarmRent Backend API
+# KrushiSahayak Backend API
 
-A complete Node.js/Express/MongoDB backend for the FarmRent equipment rental platform.
+A complete Node.js/Express/MongoDB backend for the KrushiSahayak equipment rental platform.
 
 ## Features
 
@@ -58,21 +58,25 @@ A complete Node.js/Express/MongoDB backend for the FarmRent equipment rental pla
 ## Installation
 
 1. Navigate to the backend directory:
+
 ```bash
 cd backend
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Create a `.env` file:
+
 ```bash
 cp .env.example .env
 ```
 
 4. Configure your environment variables in `.env`:
+
 ```
 PORT=5000
 NODE_ENV=development
@@ -85,11 +89,13 @@ FRONTEND_URL=http://localhost:5173
 ## Running the Server
 
 ### Development mode (with nodemon):
+
 ```bash
 npm run dev
 ```
 
 ### Production mode:
+
 ```bash
 npm start
 ```
@@ -110,6 +116,7 @@ The server will run on `http://localhost:5000`
 2. Create a new cluster
 3. Get your connection string
 4. Update `MONGODB_URI` in your `.env` file:
+
 ```
 MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/farmrent
 ```
@@ -119,6 +126,7 @@ MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/farmrent
 You can test the API using tools like Postman, Insomnia, or cURL.
 
 ### Example: Register a new user
+
 ```bash
 curl -X POST http://localhost:5000/api/auth/register \
   -H "Content-Type: application/json" \
@@ -132,6 +140,7 @@ curl -X POST http://localhost:5000/api/auth/register \
 ```
 
 ### Example: Login
+
 ```bash
 curl -X POST http://localhost:5000/api/auth/login \
   -H "Content-Type: application/json" \
@@ -142,11 +151,13 @@ curl -X POST http://localhost:5000/api/auth/login \
 ```
 
 ### Example: Get all equipment (public)
+
 ```bash
 curl http://localhost:5000/api/equipment
 ```
 
 ### Example: Create equipment (requires JWT token)
+
 ```bash
 curl -X POST http://localhost:5000/api/equipment \
   -H "Content-Type: application/json" \
@@ -164,12 +175,14 @@ curl -X POST http://localhost:5000/api/equipment \
 ## Frontend Integration
 
 The frontend is configured to connect to the backend at:
+
 - Development: `http://localhost:5000/api`
 - Production: Set `VITE_API_URL` in frontend `.env`
 
 ### API Service
 
 The frontend includes a comprehensive API service in `src/app/services/api.ts` that handles:
+
 - JWT token management (localStorage)
 - API requests with proper headers
 - Error handling
@@ -178,7 +191,7 @@ The frontend includes a comprehensive API service in `src/app/services/api.ts` t
 ### Using the API in React Components
 
 ```typescript
-import { authAPI, equipmentAPI } from '../services/api';
+import { authAPI, equipmentAPI } from "../services/api";
 
 // Login
 const handleLogin = async () => {
@@ -186,7 +199,7 @@ const handleLogin = async () => {
     const response = await authAPI.login({ email, password });
     if (response.success) {
       // Token is automatically stored
-      navigate('/explore');
+      navigate("/explore");
     }
   } catch (error) {
     console.error(error);
@@ -195,7 +208,7 @@ const handleLogin = async () => {
 
 // Get equipment
 const loadEquipment = async () => {
-  const response = await equipmentAPI.getAll({ category: 'Tractors' });
+  const response = await equipmentAPI.getAll({ category: "Tractors" });
   setEquipment(response.data);
 };
 ```
@@ -231,6 +244,7 @@ const loadEquipment = async () => {
 3. Install dependencies: `npm install`
 4. Create `.env` file with production values
 5. Use PM2 to keep the server running:
+
 ```bash
 npm install -g pm2
 pm2 start server.js --name farmrent-backend
@@ -251,15 +265,18 @@ pm2 startup
 ## Troubleshooting
 
 ### MongoDB Connection Error
+
 - Make sure MongoDB is running
 - Check your `MONGODB_URI` in `.env`
 - Verify MongoDB credentials
 
 ### CORS Error
+
 - Check `FRONTEND_URL` in `.env` matches your frontend URL
 - Ensure CORS is properly configured in `server.js`
 
 ### JWT Token Issues
+
 - Make sure `JWT_SECRET` is set in `.env`
 - Check token expiration time
 - Verify token is being sent in Authorization header
