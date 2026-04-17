@@ -3,6 +3,10 @@
 // In development, use relative /api path (proxied to localhost:5000)
 const API_BASE_URL = import.meta.env.VITE_API_URL || "/api";
 
+// Log API configuration for debugging
+console.log("[API Config] API_BASE_URL:", API_BASE_URL);
+console.log("[API Config] VITE_API_URL:", import.meta.env.VITE_API_URL);
+
 // Get token from localStorage
 const getToken = (): string | null => {
   return localStorage.getItem("token");
@@ -55,15 +59,24 @@ const apiRequest = async (
   };
 
   try {
-    const response = await fetch(`${API_BASE_URL}${endpoint}`, config);
+    const url = `${API_BASE_URL}${endpoint}`;
+    console.log(`[API Request] ${options.method || "GET"} ${url}`);
+
+    const response = await fetch(url, config);
+    console.log(
+      `[API Response] Status: ${response.status} ${response.statusText}`,
+    );
+
     const data = await response.json();
 
     if (!response.ok) {
-      throw new Error(data.message || "API request failed");
+      console.error("[API Error] Response not OK:", data);
+      throw new Error(data.message || `API request failed: ${response.status}`);
     }
 
     return data;
-  } catch (error) {
+  } catch (error: any) {
+    console.error("[API Error] Request failed:", error.message);
     throw error;
   }
 };

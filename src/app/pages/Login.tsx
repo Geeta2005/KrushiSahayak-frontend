@@ -48,6 +48,7 @@ export function Login() {
         });
       }
     } catch (error: any) {
+      console.error("[Login Error]", error);
       toast.error("Login failed", {
         description: error.message || "Please check your credentials",
       });
