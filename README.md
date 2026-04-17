@@ -80,8 +80,16 @@ npm run dev
 
 Create a `.env` file in the root directory:
 
+**Development:**
+
 ```env
 VITE_API_URL=http://localhost:5000/api
+```
+
+**Production (Vercel + Render):**
+
+```env
+VITE_API_URL=https://krushisahayak-backend.onrender.com/api
 ```
 
 ### Build for Production
