@@ -67,6 +67,21 @@ const apiRequest = async (
       `[API Response] Status: ${response.status} ${response.statusText}`,
     );
 
+    // Check if response is JSON
+    const contentType = response.headers.get("content-type");
+    console.log(`[API Response] Content-Type: ${contentType}`);
+
+    if (!contentType || !contentType.includes("application/json")) {
+      const text = await response.text();
+      console.error(
+        "[API Error] Non-JSON response received:",
+        text.substring(0, 200),
+      );
+      throw new Error(
+        `Server returned non-JSON response. Status: ${response.status}`,
+      );
+    }
+
     const data = await response.json();
 
     if (!response.ok) {
